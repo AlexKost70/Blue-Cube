@@ -1,0 +1,28 @@
+main {
+    width: 100%;
+    max-width: 1346px;
+    margin: 24px auto 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+main .card-content {
+    padding-top: 12px;
+    padding-left: 16px;
+    line-height: 20px;
+}
+
+main .card-title {
+    margin-bottom: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main .card-price {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 800;
+}

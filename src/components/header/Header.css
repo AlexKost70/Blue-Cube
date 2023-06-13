@@ -1,0 +1,41 @@
+header {
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    width: 150px;
+    height: 24px;
+    margin: 12px 0;
+}
+
+header .tabs .tab {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: none;
+    color: #172029;
+    min-width: 59px;
+    width: 59px;
+}
+
+header .tabs .tab.Mui-selected {
+    color: #0073E6;
+}
+
+header .cart {
+    color: #172029;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+header .cart img {
+    margin-right: 4px;
+}
