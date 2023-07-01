@@ -9,11 +9,11 @@ export default function ProductsPage() {
     const [data, setData] = useState('');
     const [page, setPage] = useState(1);
     const handlePageChange = (event, value) => {
-        fetchData();
+        fetchData(value);
         setPage(value);
     }
 
-    const fetchData = () => {
+    const fetchData = async (page) => {
         fetch('https://skillfactory-task.detmir.team/products?limit=15&page=' + page)
         .then((response) => { return response.json(); })
         .then((serverData) => { setData(serverData.data) })
@@ -21,13 +21,13 @@ export default function ProductsPage() {
     }
 
     useEffect(() => {
-        fetchData();
+        fetchData(page);
     }, []);
 
     return(
         <main>
             {
-                data.length > 0 &&
+                data?.length > 0 &&
                 (data.map((item) => {
                     return(
                         <Card sx={{ maxWidth: 250, maxHeight: 358, borderRadius: 4 }} key={item.id}>
