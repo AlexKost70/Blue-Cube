@@ -1,3 +1,20 @@
+:root {
+    --black: #172029;
+    --white: #FFFFFF;
+    --brand: #0073E6;
+    --brand-light-1: #99C7F5;
+    --brand-light-2: #E6F1FC;
+    --brand-light-3: #F2F6FA;
+    --gray: #808080;
+    --gray-light: #F2F2F2;
+    --acent: #FABC22;
+    --focus: #ED2C19;
+}
+
+body {
+    height: 100%;
+}
+
 .wrapper {
     margin: 0 32px;
 }

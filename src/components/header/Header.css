@@ -10,27 +10,26 @@ header .logo {
     margin: 12px 0;
 }
 
-header .tabs .tab {
+header .tabs .tab,
+header .cart {
+    color: var(--black);
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+}
+
+header .tabs .tab {
     text-transform: none;
-    color: #172029;
     min-width: 59px;
     width: 59px;
 }
 
 header .tabs .tab.Mui-selected {
-    color: #0073E6;
+    color: var(--brand);
 }
 
 header .cart {
-    color: #172029;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
     text-decoration: none;
     display: flex;
     align-items: center;
