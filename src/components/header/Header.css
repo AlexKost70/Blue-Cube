@@ -38,3 +38,31 @@ header .cart {
 header .cart img {
     margin-right: 4px;
 }
+
+@media (max-width: 450px) {
+    header .logo {
+        width: 100px;
+    }
+}
+
+@media (max-width: 405px) {
+    header .tabs .tab,
+    header .cart {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 370px) {
+    header .logo {
+        width: 80px;
+    }
+
+    .MuiTab-root:first-of-type {
+        margin-right: 3px;
+    }
+
+    header .cart img {
+        width: 15px;
+        height: 15px;
+    }
+}

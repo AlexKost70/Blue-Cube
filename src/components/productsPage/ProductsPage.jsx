@@ -2,11 +2,17 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./ProductsPage.css";
 import { useParams, useNavigate } from "react-router-dom";
-import { Card, CardMedia, CardContent, Typography, Rating, Pagination, CircularProgress } from "@mui/material";
+import { Card, CardMedia, CardContent, Typography, Rating, Pagination, CircularProgress, PaginationItem } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import starImg from "../../assets/star.svg";
 import emptyStarImg from "../../assets/emptyStar.svg";
+import arrowImg from "../../assets/arrow.svg";
 
 export default function ProductsPage() {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+    const isSmallerScreen = useMediaQuery(theme.breakpoints.down(401));
     const navigate = useNavigate();
     const params = useParams();
     const [data, setData] = useState('');
@@ -28,8 +34,19 @@ export default function ProductsPage() {
     }
 
     useEffect(() => {
+        if (!(Number(params.page) < 10 && Number(params.page) > 0)) {
+            handlePageChange(null, 1);
+        }
         fetchData(page);
     }, [page]);
+
+    function Arrow() {
+        return <img src={arrowImg} />
+    }
+
+    function ArrowRotated() {
+        return <img src={arrowImg} style={{ transform: "rotate(180deg)" }} />
+    }
 
     return(
         <main>
@@ -76,8 +93,14 @@ export default function ProductsPage() {
                 onChange={handlePageChange} 
                 variant="outlined" 
                 shape="rounded"
-                boundaryCount={2}
+                boundaryCount={isSmallerScreen ? 0 : isSmallScreen ? 1 : 2}
                 siblingCount={0}
+                renderItem={(item) => (
+                    <PaginationItem
+                        components= {{ previous: Arrow, next: ArrowRotated }}
+                        {...item}
+                    />
+                )}
             />
         </main>
     );
