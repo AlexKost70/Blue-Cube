@@ -1,18 +1,22 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./ProductsPage.css";
+import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography, Rating, Pagination, CircularProgress } from "@mui/material";
-import star from "./star.svg";
-import emptyStar from "./emptyStar.svg";
+import starImg from "../../assets/star.svg";
+import emptyStarImg from "../../assets/emptyStar.svg";
 
 export default function ProductsPage() {
+    const navigate = useNavigate();
+    const params = useParams();
     const [data, setData] = useState('');
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(Number(params.page));
     const [isPageLoaded, setIsPageLoaded] = useState(false);
+
     const handlePageChange = (event, value) => {
-        fetchData(value);
         setIsPageLoaded(false);
         setPage(value);
+        navigate(`/pages/${value}`);
     }
 
     const fetchData = async (page) => {
@@ -25,7 +29,7 @@ export default function ProductsPage() {
 
     useEffect(() => {
         fetchData(page);
-    }, []);
+    }, [page]);
 
     return(
         <main>
@@ -49,8 +53,8 @@ export default function ProductsPage() {
                                                 name="read-only" 
                                                 value={item.rating}
                                                 precision={0.5}
-                                                icon={<img src={star} style={{marginRight: "4px"}} alt="Иконка золотой звезды" />}
-                                                emptyIcon={<img src={emptyStar} style={{marginRight: "4px"}} alt="Иконка белой звезды" />}
+                                                icon={<img src={starImg} style={{marginRight: "4px"}} alt="Иконка золотой звезды" />}
+                                                emptyIcon={<img src={emptyStarImg} style={{marginRight: "4px"}} alt="Иконка белой звезды" />}
                                                 readOnly 
                                             />
                                         </Typography>
