@@ -1,0 +1,4 @@
+button.return-button:hover {
+    background-color: rgba(242, 246, 250, 1);
+    opacity: 0.8;
+}

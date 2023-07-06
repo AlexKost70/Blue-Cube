@@ -1,9 +1,13 @@
+.wrapper-notfound {
+    padding-top: 24px;
+}
+
 .notfound {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 49px);
+    height: calc(100vh - 105px);
     color: var(--brand);
 }
 

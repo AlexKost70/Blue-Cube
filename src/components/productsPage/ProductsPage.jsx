@@ -38,14 +38,14 @@ export default function ProductsPage() {
             handlePageChange(null, 1);
         }
         fetchData(page);
-    }, [page]);
+    }, [page, params.page, handlePageChange]);
 
     function Arrow() {
         return <img src={arrowImg} />
     }
 
     function ArrowRotated() {
-        return <img src={arrowImg} style={{ transform: "rotate(180deg)" }} />
+        return <img src={arrowImg} style={{ transform:"rotate(180deg)" }} />
     }
 
     return(
