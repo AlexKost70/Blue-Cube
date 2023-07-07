@@ -1,4 +1,4 @@
-main {
+main.products {
     width: 100%;
     max-width: 1346px;
     margin: 24px auto 0;
@@ -17,37 +17,37 @@ main {
     gap: 24px;
 }
 
-main .card-content {
+main.products .card-content {
     padding-top: 12px;
     padding-left: 16px;
     line-height: 20px;
 }
 
-main .loader-block {
+main.products .loader-block {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 185px);
+    height: calc(100vh - 205px);
 }
 
-main .card-title {
+main.products .card-title {
     margin-bottom: 1px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-main .card-price {
+main.products .card-price {
     font-size: 22px;
     line-height: 24px;
     font-weight: 800;
 }
 
-main .MuiPagination-root {
+main.products .MuiPagination-root {
     margin: 40px 0;
 }
 
-main .MuiPagination-root button {
+main.products .MuiPagination-root button {
     background-color: var(--brand-light-2);
     width: 52px;
     height: 52px;
@@ -61,7 +61,7 @@ main .MuiPagination-root button {
     border-color: var(--brand-light-2);
 }
 
-main .MuiPagination-root .MuiPaginationItem-ellipsis {
+main.products .MuiPagination-root .MuiPaginationItem-ellipsis {
     width: 36px;
     height: 52px;
     padding: 16px 8px;
@@ -71,18 +71,18 @@ main .MuiPagination-root .MuiPaginationItem-ellipsis {
     line-height: 20px;
 }
 
-main .MuiPagination-root button:hover,
-main .MuiPagination-root button.Mui-selected:hover {
+main.products .MuiPagination-root button:hover,
+main.products .MuiPagination-root button.Mui-selected:hover {
     color: var(--brand);
     background-color: #0073E61A;
 }
 
-main .MuiPagination-root button.Mui-disabled {
+main.products .MuiPagination-root button.Mui-disabled {
     background-color: var(--brand-light-2);
     opacity: 0.4;
 }
 
-main .MuiPagination-root button.Mui-selected {
+main.products .MuiPagination-root button.Mui-selected {
     background-color: var(--brand);
     color: var(--white);
 }

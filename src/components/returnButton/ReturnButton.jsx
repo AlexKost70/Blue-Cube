@@ -10,7 +10,6 @@ export default function ReturnButton (props) {
             variant="text" 
             className="return-button"
             onClick={() => {
-                console.log(window.history);
                 if (window.history.state && window.history.state.idx > 0) {
                     navigate(-1);
                 } else {

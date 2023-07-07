@@ -1,0 +1,96 @@
+.product {
+    padding: 24px 0 40px;
+    color: var(--black, #172029);
+}
+
+.product .wrapper {
+    display: flex;
+    min-height: calc(100vh - 115px);
+}
+
+.product button.return-button {
+    height: 20px;
+}
+
+.product .loader-block,
+.product .item {
+    margin: auto;
+}
+
+.product .item {
+    margin-top: 0;
+}
+
+.product .item-main {
+    margin-bottom: 24px;
+}
+
+.product .item-main,
+.product .item-description {
+    box-sizing: border-box;
+    padding: 24px;
+    max-width: 792px;
+    display: flex;
+    border-radius: 16px;
+    background: var(--white);
+}
+
+.product .item-main img {
+    max-width: 374px;
+    max-height: 374px;
+    margin-right: 24px;
+}
+
+.product .title {
+    max-width: 346px;
+    margin-bottom: 8px;
+}
+
+.product .rating {
+    width: 76px;
+    height: 16px;
+    margin-bottom: 24px;
+}
+
+.product .price {
+    margin-bottom: 8px;
+}
+
+.product .item .MuiButton-root {
+    border-radius: 12px;
+    background: var(--brand);
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 700;
+    width: 346px;
+    height: 52px;
+    margin-bottom: 24px;
+}
+
+.product .conditions-title {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.product .conditions {
+    margin-bottom: 8px;
+}
+
+.product .price-warning {
+    color: var(--gray);
+}
+
+.product .item-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.product .description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product .description a {
+    color: var(--brand);
+}

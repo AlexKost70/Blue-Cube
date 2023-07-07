@@ -5,6 +5,7 @@ import NotFoundPage from './components/notFoundPage/NotFoundPage';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import AppProvider from './components/hoc/AppProvider';
+import ProductPage from './components/productPage/ProductPage';
 
 const theme = createTheme({
   typography: {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: "/pages/:page",
     element: <ProductsPage />,
+  },
+  {
+    path: "/item",
+    element: <Navigate to="/pages/1" replace />
+  },
+  {
+    path: "/item/:id",
+    element: <ProductPage />
   },
   {
     path: "*",
