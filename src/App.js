@@ -4,6 +4,7 @@ import ProductsPage from './components/productsPage/ProductsPage';
 import NotFoundPage from './components/notFoundPage/NotFoundPage';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import AppProvider from './components/hoc/AppProvider';
 
 const theme = createTheme({
   typography: {
@@ -34,12 +35,14 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header />
-        <RouterProvider router={router} />
-      </div>
-    </ThemeProvider>
+    <AppProvider>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Header />
+          <RouterProvider router={router} />
+        </div>
+      </ThemeProvider>
+    </AppProvider>
   );
 }
 

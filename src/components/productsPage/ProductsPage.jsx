@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./ProductsPage.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography, Rating, Pagination, CircularProgress, PaginationItem } from "@mui/material";
@@ -8,8 +8,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import starImg from "../../assets/star.svg";
 import emptyStarImg from "../../assets/emptyStar.svg";
 import arrowImg from "../../assets/arrow.svg";
+import { AppContext } from "../hoc/AppProvider";
 
 export default function ProductsPage() {
+    const { setCurrentTab } = useContext(AppContext);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
     const isSmallerScreen = useMediaQuery(theme.breakpoints.down(401));
@@ -34,11 +36,12 @@ export default function ProductsPage() {
     }
 
     useEffect(() => {
+        setCurrentTab("main");
         if (!(Number(params.page) < 10 && Number(params.page) > 0)) {
             handlePageChange(null, 1);
         }
         fetchData(page);
-    }, [page, params.page, handlePageChange]);
+    }, [page, params.page, handlePageChange, setCurrentTab]);
 
     function Arrow() {
         return <img src={arrowImg} />
