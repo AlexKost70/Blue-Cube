@@ -1,11 +1,11 @@
 import './App.css';
-import Header from './components/header/Header';
-import ProductsPage from './components/productsPage/ProductsPage';
-import NotFoundPage from './components/notFoundPage/NotFoundPage';
+import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import AppProvider from './components/hoc/AppProvider';
-import ProductPage from './components/productPage/ProductPage';
+import AppProvider from './hoc/AppProvider';
+import ProductsPage from './pages/ProductsPage';
+import ProductPage from './pages/ProductPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const theme = createTheme({
   typography: {
@@ -47,7 +47,6 @@ function App() {
     <AppProvider>
       <ThemeProvider theme={theme}>
         <div className="App">
-          <Header />
           <RouterProvider router={router} />
         </div>
       </ThemeProvider>

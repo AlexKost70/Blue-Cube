@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState, useContext } from "react";
-import "./ProductsPage.css";
+import "./ProductsList.css";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography, Rating, Pagination, CircularProgress, PaginationItem, CardActionArea } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -8,9 +8,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import starImg from "../../assets/star.svg";
 import emptyStarImg from "../../assets/emptyStar.svg";
 import arrowImg from "../../assets/arrow.svg";
-import { AppContext } from "../hoc/AppProvider";
+import { AppContext } from "../../hoc/AppProvider";
 
-export default function ProductsPage() {
+export default function ProductsList() {
     const { setCurrentTab } = useContext(AppContext);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));

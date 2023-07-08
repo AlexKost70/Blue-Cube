@@ -1,10 +1,10 @@
-import "./NotFoundPage.css";
+import "./NotFound.css";
 import { useContext, useEffect } from "react";
 import ReturnButton from "../returnButton/ReturnButton";
 import { Box } from "@mui/material";
-import { AppContext } from "../hoc/AppProvider";
+import { AppContext } from "../../hoc/AppProvider";
 
-export default function NotFoundPage() {
+export default function NotFound() {
     const { setCurrentTab } = useContext(AppContext);
     useEffect(() => setCurrentTab(false));
 

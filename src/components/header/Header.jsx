@@ -3,8 +3,19 @@ import "./Header.css";
 import logoImg from "../../assets/logo.svg";
 import cartImg from "../../assets/cart.svg";
 import Divider from "@mui/material/Divider";
+import { Link as RouterLink } from "react-router-dom";
 import { Tabs, Tab, Box, Link } from "@mui/material";
-import { AppContext } from "../hoc/AppProvider";
+import { AppContext } from "../../hoc/AppProvider";
+
+function LinkTab(props) {
+    return (
+        <Tab
+            component={RouterLink}
+            className="tab"
+            {...props}
+        />
+    );
+}
 
 export default function Header() {
     const { currentTab } = useContext(AppContext);
@@ -20,8 +31,8 @@ export default function Header() {
                             borderRadius: "100px",
                         }
                     }}>
-                        <Tab className="tab"  label="Товары" value="main" sx={{ mr: "16px" }} />
-                        <Tab className="tab" label="Заказы" value="orders"  />
+                        <LinkTab to="/pages/1"  label="Товары" value="main" sx={{ mr: "16px" }} />
+                        <LinkTab to="/orders" label="Заказы" value="orders"  />
                     </Tabs>
                     <Link className="cart" href="#"><img src={cartImg} alt="Логотип корзины" />Корзина (0)</Link>
                 </header>

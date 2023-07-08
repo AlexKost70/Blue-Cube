@@ -1,14 +1,14 @@
 import { useEffect, useContext, useState } from "react";
-import { AppContext } from "../hoc/AppProvider";
+import { AppContext } from "../../hoc/AppProvider";
 import { Box, CircularProgress, Rating, Typography, Button } from "@mui/material";
 import ReturnButton from "../returnButton/ReturnButton";
 import { useParams } from "react-router-dom";
 import starImg from "../../assets/star.svg";
 import emptyStarImg from "../../assets/emptyStar.svg";
 import undoImg from "../../assets/undo.svg"
-import "./ProductPage.css";
+import "./Product.css";
 
-export default function ProductPage() {
+export default function Product() {
     const { setCurrentTab } = useContext(AppContext);
     const params = useParams();
     const [data, setData] = useState('');
