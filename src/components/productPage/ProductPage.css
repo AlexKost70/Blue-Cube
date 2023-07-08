@@ -94,3 +94,77 @@
 .product .description a {
     color: var(--brand);
 }
+
+@media(max-width: 945px) {
+    .product .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product button.return-button {
+        width: 73px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 850px) {
+    .product .item-main {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .product .item-main img {
+        margin-right: 0;
+    }
+
+    .product .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 470px) {
+    .product .wrapper {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 450px) {
+    .product {
+        padding: 15px 0;
+    }
+
+    .product .item-main, .product .item-description {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .product .wrapper {
+        margin: 0 3px;
+    }
+}
+
+@media (max-width: 420px) {
+    .product .item-main img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 395px) {
+    .product .item-main, .product .item-description {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .product .item-main img {
+        max-width: 80%;
+    }
+
+    .product .item .MuiButton-root {
+        width: 95%;
+    }
+}
