@@ -56,12 +56,7 @@
     margin-bottom: 8px;
 }
 
-.product .item .MuiButton-root {
-    border-radius: 12px;
-    background: var(--brand);
-    text-transform: none;
-    font-size: 16px;
-    font-weight: 700;
+.product .item .brand-button {
     width: 346px;
     height: 52px;
     margin-bottom: 24px;
@@ -164,7 +159,7 @@
         max-width: 80%;
     }
 
-    .product .item .MuiButton-root {
+    .product .item .brand-button {
         width: 95%;
     }
 }

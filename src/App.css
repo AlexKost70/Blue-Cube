@@ -23,6 +23,70 @@ body {
     color: var(--brand) !important;
 }
 
+.MuiButton-root.brand-button {
+    border-radius: 12px;
+    background: var(--brand);
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: none;
+}
+
+.MuiButton-root.brand-button:hover {
+    box-shadow: none;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), var(--brand);
+}
+
+.MuiButton-root.brand-button:active {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), var(--brand);
+}
+
+div.items-counter {
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.items-counter button,
+.items-counter p {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brand-light-2);
+    font-weight: 700;
+    border: none !important;
+    border-radius: 0;
+}
+
+.items-counter button {
+    color: var(--brand);
+    font-size: 25px;
+}
+
+.items-counter button:disabled {
+    background: var(--brand-light-2);
+    color: rgba(0, 115, 230, 0.3);
+}
+
+.items-counter button:hover,
+.items-counter p:hover {
+    background: linear-gradient(0deg, rgba(0, 115, 230, 0.10) 0%, rgba(0, 115, 230, 0.10) 100%), var(--brand-light-2);
+}
+
+.items-counter button:active {
+    background: var(--brand);
+    color: var(--white);
+}
+
+.items-counter button:first-of-type {
+    border-radius: 12px 0px 0px 12px;
+}
+
+.items-counter button:last-of-type {
+    border-radius: 0px 12px 12px 0px;
+}
+
 @media (max-width: 500px) {
     .wrapper {
         margin: 0 10px;

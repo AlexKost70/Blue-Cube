@@ -9,7 +9,7 @@ import undoImg from "../../assets/undo.svg"
 import "./Product.css";
 
 export default function Product() {
-    const { setCurrentTab } = useContext(AppContext);
+    const { setCurrentTab, cart, setCart } = useContext(AppContext);
     const params = useParams();
     const [data, setData] = useState('');
     const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -26,6 +26,32 @@ export default function Product() {
         setCurrentTab(false);
         fetchData(params.id);
     }, []);
+
+    const addToCart = (id, title, price, picture) => {
+        let isContains = false;
+        let newCart = cart.map(item => {
+            if (item.product.id === id) {
+                isContains = true;
+                return {...item, quantity: item.quantity + 1};
+            } else {
+                return item;
+            }
+        })
+
+        if (!isContains) {
+            newCart.push({
+                "quantity": 1,
+                "product": {
+                    "id": id,
+                    "title": title,
+                    "price": price,
+                    "picture": picture
+                }
+            })
+        }
+        setCart(newCart);
+        console.log(cart);
+    }
 
     return(
         <main className="product">
@@ -51,7 +77,7 @@ export default function Product() {
                                         data.price.toString().length >= 3 ? data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") : data.price
                                     } ₽
                                 </Typography>
-                                <Button variant="contained">Добавить в корзину</Button>
+                                <Button variant="contained" className="brand-button" onClick={() => addToCart(params.id, data.title, data.price, data.picture)}>Добавить в корзину</Button>
                                 <Typography fontSize={16} fontWeight={"bold"} className="conditions-title">
                                     <img src={undoImg} alt={"Иконка стрелки, направленной назад"} style={{marginRight: 8}} />
                                     Условия возврата

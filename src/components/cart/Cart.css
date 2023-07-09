@@ -1,0 +1,142 @@
+.card-modal .MuiPaper-root {
+    top: 18px;
+    right: -15px;
+    position: absolute;
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: 0px 16px 40px 0px rgba(23, 32, 41, 0.32);
+}
+
+.card-modal .card-content {
+    box-sizing: border-box;
+    width: 560px;
+    padding: 24px;
+    color: var(--black);
+}
+
+.card-modal .item {
+    height: 84px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.card-modal .item img {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+}
+
+.card-modal .item .title {
+    width: 144px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-modal .item .remove-button {
+    width: 90px;
+    margin-left: 22px;
+}
+
+.card-modal .item .remove-button:hover {
+    background-color: var(--white);
+    opacity: 0.8;
+}
+
+.card-modal .card-footer .total-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 16px 0;
+}
+
+.card-modal .card-footer .total-name,
+.card-modal .item .price {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.card-modal .item .price {
+    width: 112px;
+    text-align: right;
+}
+
+.card-modal .total-price {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 32px;
+}
+
+.card-modal .brand-button {
+    width: 512px;
+    height: 52px;
+}
+
+@media (max-width: 595px) {
+    .card-modal .card-content {
+        width: calc(100vw - 35px);
+    }
+
+    .card-modal .card-content {
+        padding: 20px;
+    }
+
+    .card-modal .item {
+        justify-content: space-between;
+    }
+
+    .card-modal .item .price {
+        width: 80px;
+    }
+
+    .card-modal .brand-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 565px) {
+    .card-modal .item .title {
+        width: 100px;
+    }
+}
+
+@media (max-width: 515px) {
+    .card-modal .item {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-modal .item > img {
+        margin-top: 16px;
+    }
+
+    .card-modal .item .title {
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }
+
+    .card-modal .item .price {
+        margin-bottom: 16px;
+        height: 32px;
+    }
+
+    .card-modal .item .remove-button {
+        margin-left: 0;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 330px) {
+    .card-modal .MuiPaper-root {
+        right: -32px;
+    }
+
+    .card-modal .card-content {
+        width: 100vw;
+    }
+}
