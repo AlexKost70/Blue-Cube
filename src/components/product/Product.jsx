@@ -9,7 +9,7 @@ import undoImg from "../../assets/undo.svg"
 import "./Product.css";
 
 export default function Product() {
-    const { setCurrentTab, cart, setCart } = useContext(AppContext);
+    const { setCurrentTab, cart, setCart, updateCart } = useContext(AppContext);
     const params = useParams();
     const [data, setData] = useState('');
     const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -50,7 +50,7 @@ export default function Product() {
             })
         }
         setCart(newCart);
-        console.log(cart);
+        updateCart(newCart);
     }
 
     return(

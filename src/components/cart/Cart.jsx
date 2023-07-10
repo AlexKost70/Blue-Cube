@@ -6,7 +6,7 @@ import "./Cart.css";
 
 export default function Cart(props) {
     const [total, setTotal] = useState(0);
-    const { cart, setCart } = useContext(AppContext);
+    const { cart, setCart, updateCart } = useContext(AppContext);
 
     useEffect(() => {
         let counter = 0;
@@ -17,7 +17,6 @@ export default function Cart(props) {
     }, [cart]);
 
     const updateItemQuantity = (action, currentQuantity, id) => {
-        console.log(action, currentQuantity, id);
         let newQuantity = currentQuantity;
         switch(action) {
             case "increase":
@@ -38,8 +37,26 @@ export default function Cart(props) {
                 return item;
             }
         });
-        console.log(newCart);
         setCart(newCart);
+        updateCart(newCart);
+    }
+
+    const removeItem = (id) => {
+        let newCart = cart.filter(item => {
+            return item.product.id !== id;
+        });
+        setCart(newCart);
+        updateCart(newCart);
+    }
+
+    const handleSubmit = async () => {
+        let response = await fetch('https://skillfactory-task.detmir.team/cart/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            }
+        });
+        setCart([]);
     }
 
     return(
@@ -56,7 +73,7 @@ export default function Cart(props) {
                                     <img src={item.product.picture} alt={item.product.title} title={item.product.title} />
                                     <Typography className="title" title={item.product.title}>{item.product.title}</Typography>
                                     <ButtonGroup variant="contained" className="items-counter">
-                                        <Button onClick={() => updateItemQuantity("decrease", item.quantity, item.product.id)}>−</Button>
+                                        <Button disabled={item.quantity === 0} onClick={() => updateItemQuantity("decrease", item.quantity, item.product.id)}>−</Button>
                                         <p>{item.quantity}</p>
                                         <Button onClick={() => updateItemQuantity("increase", item.quantity, item.product.id)}>+</Button>
                                     </ButtonGroup>
@@ -73,6 +90,7 @@ export default function Cart(props) {
                                                 fontWeight: 700,
                                                 lineHeight: "20px"
                                             }}
+                                            onClick={() => removeItem(item.product.id)}
                                         ><img style={{marginRight: 4, width: 20, height: 20}} src={trashImg} alt="Иконка мусорной корзины" />Удалить</Button> 
                                         : 
                                         <Typography className="price">{item.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽</Typography>
@@ -85,7 +103,7 @@ export default function Cart(props) {
                         <Typography className="total-name">Итого</Typography>
                         <Typography className="total-price">{total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽</Typography>
                     </div>
-                    <Button variant="contained" className="brand-button">Оформить заказ</Button>
+                    <Button disabled={cart.length === 0} onClick={handleSubmit} variant="contained" className="brand-button">Оформить заказ</Button>
                 </div>
             </Box>
         </Dialog>

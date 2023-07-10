@@ -41,6 +41,12 @@ body {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), var(--brand);
 }
 
+.MuiButton-root.brand-button:disabled {
+    color: var(--white);
+    opacity: 0.4;
+    background: var(--brand);
+}
+
 div.items-counter {
     border-radius: 12px;
     box-shadow: none;

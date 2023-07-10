@@ -27,7 +27,6 @@ export default function Header() {
         fetch('https://skillfactory-task.detmir.team/cart')
         .then((response) => { return response.json(); })
         .then((serverData) => { setCart(serverData) })
-        .then(() => console.log("получили данные", cart))
         .catch(() => { console.log('error') });
     }
     
